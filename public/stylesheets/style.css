@@ -7,32 +7,48 @@ body {
 
 #jumbo{
     background-color: #050505;
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 250px;
     margin: 50px 375px;
     padding: 20px 20px;
     color: white;
+    border-radius: 20   px !important;
 }
 h1{
     color: #1B9AAA !important;
+    font-family: 'Bree Serif', serif;
+    font-weight: bold;
+}
+a{
+    font-family: 'Bree Serif', serif;
+    font-weight: bold;
+    font-size: 22px !important;
+}
+#mlb{
+    padding-right: 10px;   
 }
 .btn{
     background-color: #E2E2E2;
-    width: 100px;
-    height: 40px;
-    font-size: 18px;
+    width: 125px;
+    height: 45px;
+    font-size: 20px;
     text-align: center;
     vertical-align: middle;
+    padding: 4px;
 }
 .btn:hover{
     background-color: #6DB8BF;
     color: white;
 }
 #swing, #ball{
-    width: 25px;
-    height: 22px;
-    padding-right: 5px;
+    width: 26px;
+    height: 24px;
+    padding-right: 6px;
 }
 #auth{
-margin: 15px 15px;   
+    margin: 15px 15px;   
+    padding-top: 15px;
+}
+#space{
+    padding: 0px 5px; 
 }
