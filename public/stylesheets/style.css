@@ -1,8 +1,34 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F5F1E3;
 }
 
-a {
-  color: #00B7FF;
+
+#jumbo{
+    background-color: #050505;
+    width: 400px;
+    height: 300px;
+    margin: 100px 375px;
+    padding: 20px 20px;
+    color: white;
+}
+h1{
+    color: #1B9AAA !important;
+}
+.btn{
+    background-color: #DDDBCB;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+#swing, #ball{
+    width: 25px;
+    height: 22px;
+    padding-right: 5px;
+}
+#auth{
+margin: 15px 15px;   
 }
