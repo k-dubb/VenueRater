@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="/public/stylesheets/style.css" /> -->
+</head>
+<body>
+
+
+<form name="search" id="search" method="" action="">
+    <div class="form-group">
+      <input class="form-control" type="text" name="q" id="q" value="" placeholder="What venue are you interested in going to?"/>
+    </div>
+    <input class="btn btn-primary" type="submit" name="submit" value="Search"/>
+  </form>
+
+  <ul id="results"></ul>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+
+$(function() {
+    var apiRoot = 'http://api.seatgeek.com/2/venues/';
+
+    // var loadVenues = function(){
+      $('#search').on('submit', function() {
+      var searchTerm = $('#q').val();
+      console.log('The value submitted was: ' + searchTerm);
+
+      var jqxhr = $.ajax({
+        url: apiRoot,
+        method: "GET",
+        data: {
+          city: searchTerm,
+          name: searchTerm
+        },
+        // dataType: "json"
+      })
+      .done(function(venues) {
+        var venues = data['Search'];
+        console.log('Venue data', venues);
+        // displayVenues(venues);
+
+          for (var i=0; i<venues.length; i++) {
+          console.log('Venue: ', venues[i]);
+
+          var content = '<li>' + venues[i].name + venues[i].address + venues[i].city + '</li>';
+
+            $('#results').append(content);
+          }
+        });
+    });
+ });
+
+  
+
+
+
+
+
+
+// $(function() {
+//     var apiRoot = 'http://api.seatgeek.com/2/venues/';
+
+//     var loadVenues = function(){
+
+//       var jqxhr = $.ajax({
+//         url: apiRoot,
+//         method: "GET",
+//         data: {},
+//         dataType: "json"
+//       })
+//       .done(function(concerts) {
+//         console.log('Venue data', venues);
+//         displayVenues(venues);
+//       })
+//       .fail(function(jqXHR, textStatus) {
+//         console.log("Request failed: " + textStatus);
+//       })
+//       .always(function() {
+//         console.log('Request completed');
+//         //hideLoadingIndicator();
+//       });
+
+//     // // $('#search').on('submit', function() {
+//     // //   var searchTerm = $('#q').val();
+//     // //   console.log('The form was submitted');
+//     // //   console.log('The value submitted was: ', searchTerm);
+
+//     var displayVenues = function(venues){
+//       for (var i=0; i<venues.length; i++){
+//         var venue = venues[i];
+
+//         appendVenue(venue);
+//       }
+//     }
+
+//     var appendVenue = function(venue){
+//       $('#venues').append('<div class="venue">' + '<h3>' + venue.name + '</h3>' + '<h2>' + venue.city + '</h2></div>');
+//     };
+
+//     //       // Take results and output to the page
+//     //       for (var i=0; i<venues.length; i++) {
+//     //         console.log('Venue: ', venues[i]);
+
+//     //         // if (!movies[i].Poster || movies[i].Poster === 'N/A') {
+//             //   continue;
+//             // }
+
+//       var content = '<li><h4>' + venues[i].name + venues[i].address + venues[i].city + '</h4></li>';
+
+//             $('#results').append(content);
+//           }
+//   });
+
+
+</script>
+</body>
+</html>
