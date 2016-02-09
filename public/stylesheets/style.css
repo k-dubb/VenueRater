@@ -1,7 +1,7 @@
 body {
   /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #F5F1E3;
+  background-color: #E2E2E2;
 }
 
 
@@ -9,7 +9,7 @@ body {
     background-color: #050505;
     width: 400px;
     height: 300px;
-    margin: 100px 375px;
+    margin: 50px 375px;
     padding: 20px 20px;
     color: white;
 }
@@ -17,12 +17,16 @@ h1{
     color: #1B9AAA !important;
 }
 .btn{
-    background-color: #DDDBCB;
+    background-color: #E2E2E2;
     width: 100px;
     height: 40px;
     font-size: 18px;
     text-align: center;
     vertical-align: middle;
+}
+.btn:hover{
+    background-color: #6DB8BF;
+    color: white;
 }
 #swing, #ball{
     width: 25px;
