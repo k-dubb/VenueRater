@@ -3,7 +3,7 @@
 <head>
   <title><%= title %></title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <!-- <link rel="stylesheet" href="/public/stylesheets/style.css" /> -->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
   </form>
 
   <ul id="results"></ul>
-    <!-- <section id="venues"></section> -->
+    <section id="venues"> </section>
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript">
@@ -23,12 +23,14 @@
 $(function() {
     var apiRoot = 'http://api.seatgeek.com/2/venues/';
 
-    var loadVenues = function(){
+    var loadVenues = function(city){
       
       var jqxhr = $.ajax({
         url: apiRoot,
         method: "GET",
-        data: {},
+        data: {
+          city: city
+        },
         dataType: "jsonp",
         jsonCallback: 'info'
       })
@@ -40,9 +42,9 @@ $(function() {
         for (var i=0; i<data.venues.length; i++) {
 //      console.log(data.venues[i].name);
 
-          var content = '<li>' + data.venues[i].name + ', ' + data.venues[i].address + ', ' + data.venues[i].city + ', ' + data.venues[i].state + ', ' + data.venues[i].postal_code +'</li>';
+          var content = '<li>' + data.venues[i].name + ' -- ' + data.venues[i].address + ', ' + data.venues[i].city + ', ' + data.venues[i].state + ', ' + data.venues[i].postal_code +'</li>';
               
-//        // $('#results').append(content);
+         $('#results').append(content);
  //          console.log(content);
         }
       })
@@ -58,53 +60,53 @@ $(function() {
       };
     }
 
-  loadVenues();
 
     var displayVenues = function(venues){
       for (var i=0; i<data.venues.length; i++){
         var venue = data.venues[i];
 
-        appendVenue(venue);
+        appendVenue();
       }
     };
 
     var appendVenue = function(venue){
-      $('#results').append(venue);
+      $('#venues').append(venue);
       // console.log(venue.name);
       // $('#venues').append('<div class="venue">' + '<h3>' + venue.name + '</h3>' + '<h2>' + venue.city + '</h2></div>');
     };
 
 
-    $('#search').on('submit', function() {
-    // var searchTerm = $('#q').val();
+    $('#search').on('submit', function(evt) {
+      evt.preventDefault();
+      var searchTerm = $('#q').val();
     // console.log('The value submitted was: ' + searchTerm);
-      
-    var jqxhr = $.ajax({
-        url: apiRoot,
-        method: "GET",
-        data: {},
-        dataType: "jsonp",
-        jsonCallback: 'info'
-      })
-      .done(function(data) {
-        var venues = data;
-        // displayVenues(venues);
-            for (var i=0; i<data.venues.length; i++) {
-              // console.log('Venue: ', venues[i]);
+      loadVenues(searchTerm);
+  //   var jqxhr = $.ajax({
+  //       url: apiRoot,
+  //       method: "GET",
+  //       data: {},
+  //       dataType: "jsonp",
+  //       jsonCallback: 'info'
+  //     })
+  //     .done(function(data) {
+  //       var venues = data;
+  //       // displayVenues(venues);
+  //           for (var i=0; i<data.venues.length; i++) {
+  //             // console.log('Venue: ', venues[i]);
 
-              var content = '<li>' + data.venues[i].name + ', ' + data.venues[i].address + ', ' + data.venues[i].city + ', ' + data.venues[i].state + ', ' + data.venues[i].postal_code +'</li>';
+  //             var content = '<li>' + data.venues[i].name + ', ' + data.venues[i].address + ', ' + data.venues[i].city + ', ' + data.venues[i].state + ', ' + data.venues[i].postal_code +'</li>';
             
-              console.log(content);
+  // //            console.log(content);
                   
-              $('#results').append(content);
-            }
-      })
-      .fail(function(jqXHR, textStatus) {
-        // console.log("Request failed: " + textStatus);
-      })
-      .always(function() {
-        // console.log('Request completed');
-      });
+  //             $('#results').append(content);
+  //           }
+  //     })
+  //     .fail(function(jqXHR, textStatus) {
+  //       // console.log("Request failed: " + textStatus);
+  //     })
+  //     .always(function() {
+  //       // console.log('Request completed');
+  //     });
 
       function info(venues){
         alert(venues);
@@ -113,7 +115,6 @@ $(function() {
     
   });
 
-  loadVenues();
 
 });
 </script>
