@@ -11,6 +11,12 @@ var userSchema = new mongoose.Schema({
       password: { type: String, required: true },
       created_at: Date,
       updated_at: Date
+    },
+
+    facebook: {
+      id : String,
+      token : String,
+      name : String
     }
 });
 

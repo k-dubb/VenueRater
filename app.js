@@ -12,7 +12,14 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+// var venues = require('.routes/venues');
 var User = require('./models/user');
+var Venue = require('./models/venue');
+var Rate = require('./models/rate');
+
+var mongoose = require('mongoose');
+
+var venues = require('./routes/api/v1/venues');
 
 var app = express();
 
@@ -28,17 +35,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Mongoose connection
-var mongoose = require('mongoose');
-mongoose.connect(process.env.DB_CONN_SPORTY);
-
 require('./config/passport')(passport); 
 
+// Mongoose connection
+mongoose.connect(process.env.DB_CONN_SPORTY);
+
+// routes
 app.use('/', routes);
+app.use('/api/v1/venues/', venues);
+
 app.use('/users', users);
+// app.use('/venues', venues);
 
 // Required for passport
-app.use(session({ secret: 'b1t3myshlnym3t@L@5s', saveUninitialized: true, resave: true })); // session secret
+app.use(session({ secret: 'b1t3myshlnym3t@L@5s' })); // session secret
 app.use(passport.initialize()); //initialize passport
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

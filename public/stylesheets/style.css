@@ -58,6 +58,7 @@ a{
     text-align: center;
     vertical-align: middle;
     padding: 4px;
+    color: black;
 }
 .btn:hover{
     background-color: #6DB8BF;
@@ -74,4 +75,101 @@ a{
 }
 #space{
     padding: 0px 5px; 
+}
+
+.c-rating {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Rating stars */
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  float:left;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px black, 2px 2px black, .1em .1em .2em black;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #6DB8BF;
+    text-shadow:1px 1px #c60, 2px 2px black, .1em .1em .2em black;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #6DB8BF;
+    text-shadow:1px 1px black, 2px 2px black, .1em .1em .2em black;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #6DB8BF;
+    text-shadow:1px 1px black, 2px 2px black, .1em .1em .2em black;
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+.rating{
+  margin-left: 525px;
+}
+h3{
+    color: #1B9AAA !important;
+    font-family: 'Bree Serif', serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+h2{
+  text-align: center;
+}
+#favorites{
+  height: 20px;
+  width: 20px;
+  border: 1px black solid;
 }
