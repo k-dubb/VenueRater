@@ -40,7 +40,7 @@ router.get('/rate/:id', function(req, res, next) {
                              city: venue.venues[0].city,
                              state: venue.venues[0].state,
                              zip: venue.venues[0].postal_code,
-                             url: venue.venues[0].url
+                             url: venue.venues[0].url,
 
         });
         //res.render('show_movie', {title: movie.results[0].display_title});

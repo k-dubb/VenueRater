@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
+  <title>venueRater</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
 
-<form name="search" id="search" method="" action="">
-    <div class="form-group">
-      <input class="form-control" type="text" name="q" id="q" value="" placeholder="Search for a venue by city"/>
+<div class="searchby">
+<span id="searchby"<h2>Go ahead, search for a venue by its city.<br>Then let the rating begin!</h2></span>
+
+<form name="search" id="search"  style="margin-top: 55px;" method="" action="">
+    <div class="form-group" style='display: inline-block;'>
+      <input class="form-control" type="text" name="q" id="q" value="" style='display: block; margin: 5px; color: #1B9AAA' placeholder="Search for a venue by city"/>
     </div>
-    <input class="btn2 btn-primary" id="search2" type="submit" name="submit" value="Search"/>
+    <input class="btn2 btn-primary" id="search2" style="margin: 10px;" type="submit" name="submit" value="Search"/>
   </form>
+</div>
 
 <ul id="results"></ul>
 

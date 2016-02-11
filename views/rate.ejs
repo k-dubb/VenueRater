@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Project</title>
+    <title>venueRater</title>
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://daigofuji.github.io/bbclub-font/css/bbclub-font.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -14,10 +14,10 @@
 
        <div class="venueData">
         <ul class="vdata">
-          <li><%= name %></li>
-          <li><%= address %></li>
-          <li><%= city + ', ' + state + ' ' + zip %></li>
-          <li><a target='_blank' href=<%= url %>><%= url %></a></li>
+          <li id ="venue"><%= name %></li>
+          <li id="venue"><%= address %></li>
+          <li id="venue"><%= city + ', ' + state + ' ' + zip %></li>
+          <li id="linkto"><a target='_blank' style='color: #1B9AAA' href=<%= url %>><%= url %></a></li>
         </ul>
       </div>
 
