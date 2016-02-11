@@ -47,12 +47,13 @@ font-size: 16px;
     margin-top: 50px;
     display: block;
 }
-h1{
+h1, h5{
     color: #1B9AAA !important;
     font-family: 'Bree Serif', serif;
     font-weight: bold;
     font-size: 20px;
 }
+
 a{
     font-family: 'Bree Serif', serif;
     font-weight: bold;
@@ -290,13 +291,19 @@ h4{
   font-weight: bold;
   text-align: center;
 }
+h5{
+  color: #1B9AAA !important;
+  font-family: 'Bree Serif', serif;
+  font-size: 28px;
+  font-weight: bold;
+}
 #place{
-  height: 160px; 
+  height: 200px; 
   width: 160px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-top: -140px;
+  margin-top: -220px;
   margin-left: 480px;
 }
 .venueData{
