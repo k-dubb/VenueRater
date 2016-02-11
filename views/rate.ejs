@@ -10,6 +10,16 @@
 <body>
 
   <a href="http://localhost:3000/main"><button type="button" class="btn btn-default" id="btn4">Go Back</button></a>
+  <h3>Rate <%= name %>:</h3>
+
+       <div class="venueData">
+        <ul class="vdata">
+          <li><%= name %></li>
+          <li><%= address %></li>
+          <li><%= city + ', ' + state + ' ' + zip %></li>
+          <li><a target='_blank' href=<%= url %>><%= url %></a></li>
+        </ul>
+      </div>
 
     <div class="background">
        <div class="transbox">
@@ -20,11 +30,10 @@
 
     <div id="ask">
       <h2>Based on your experience with parking accessibility, <br>
-      food/drink options, cleanliness, and anything else you find relevent regarding your time, <br>
-      how would you rate your overall experience at "venue name"?<br>
+      food/drink options, cleanliness, and anything else you find relevant, <br>
+      how would you rate your overall experience at <%= name %>?<br>
       Would you recommend it to others?</h2>
     </div>
-
 
     <div class="rater">
       <fieldset class="rating" style="border: none">
@@ -36,9 +45,10 @@
       </fieldset>
     </div>
 
+  <!-- <div class='seatgeek_logo'> -->
+    <img src='https://www.planted.com/assets/planted/logo-seatgeek@3x-092316c00f3540f8d1cf0cd1995cfc19b8461c082a7fffd30010d9b273f4877a.png' alt='seatgeek_logo' id='seatgeek_logo'>
+  <!-- </div> -->
     <button type="button" class="btn btn-default" id="btn3">Add to Favorites</button>
-
-
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </body>
