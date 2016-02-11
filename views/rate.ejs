@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 <body>
-
+  
   <a href="http://localhost:3000/main"><button type="button" class="btn btn-default" id="btn4">Go Back</button></a>
   <h3>Rate <%= name %>:</h3>
 
@@ -17,9 +17,10 @@
           <li id ="venue"><%= name %></li>
           <li id="venue"><%= address %></li>
           <li id="venue"><%= city + ', ' + state + ' ' + zip %></li>
-          <li id="linkto"><a target='_blank' style='color: #1B9AAA' href=<%= url %>><%= url %></a></li>
         </ul>
       </div>
+
+  <a href="/logout" class="btn btn-default btn-sm" id="logout">Logout</a>
 
     <div class="background">
        <div class="transbox">
@@ -45,9 +46,8 @@
       </fieldset>
     </div>
 
-  <!-- <div class='seatgeek_logo'> -->
     <img src='https://www.planted.com/assets/planted/logo-seatgeek@3x-092316c00f3540f8d1cf0cd1995cfc19b8461c082a7fffd30010d9b273f4877a.png' alt='seatgeek_logo' id='seatgeek_logo'>
-  <!-- </div> -->
+    <a id="linkto" target='_blank' style='color: #1B9AAA' href=<%= url %>><%= url %></a>
     <button type="button" class="btn btn-default" id="btn3">Add to Favorites</button>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

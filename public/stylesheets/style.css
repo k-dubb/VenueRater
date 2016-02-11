@@ -170,7 +170,7 @@ a{
 h3{
     color: #1B9AAA !important;
     font-family: 'Bree Serif', serif;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     margin-top: -40px;   
@@ -192,9 +192,9 @@ div.background {
   background: #6DB8BF repeat;
   border: 1px solid black;
   width: 200px;
-  height: 200px;
+  height: 300px;
   float: right;
-  margin-top: -200px;
+  margin-top: -40px;
   margin-right: 20px;
   text-decoration: underline;
   font-size: 18px;
@@ -206,7 +206,7 @@ div.transbox {
   background-color: #ffffff;
   border: 1px solid black;
   opacity: 0.6;
-  height: 180px;
+  height: 275px;
   border-radius: 5%;
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
@@ -254,15 +254,13 @@ div.transbox p {
 #btn4{
   background-color: black;
   color: white;
-  /*margin: 80px;*/
   width: 125px;
   height: 45px;
   font-size: 20px;
   text-align: center;
   vertical-align: middle;
   padding: 4px;
-  margin: 20px;
-    
+  margin: 20px; 
 }
 #btn4:hover{
   background-color: #6DB8BF;
@@ -306,14 +304,6 @@ h5{
   margin-top: -220px;
   margin-left: 480px;
 }
-.venueData{
-  font-weight: bold;
-  font-size: 16px;
-}
-.vdata{
-  font-size: 20px;
-  font: "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 #seatgeek_logo{
   height: 80px;
   width: auto;
@@ -322,7 +312,7 @@ h5{
   margin-bottom: 20px;
 }
 #results{
-  text-align: center; 
+  text-align: center;
 }
 .searchby{
   margin-top: 50px;
@@ -339,14 +329,39 @@ h5{
 li, #venue{
   color: black;
   text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
 }
 li:hover{
-    color: #1B9AAA;
-    text-decoration: none;
+  color: #1B9AAA;
+  text-decoration: none;
 }
 #linkto:hover{
 text-decoration: none;
 }
 a:hover{
   text-decoration: none;
+}
+#linkto{
+margin-left: 375px;
+}
+#logout{
+  background-color: black;
+  color: white;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px;
+  font-family: 'Bree Serif', serif;
+  width: 125px;
+  font-size: 20px;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  border-radius: 5%;
+}
+#logout:hover{
+  background-color: #6DB8BF;
+  color: black;
 }

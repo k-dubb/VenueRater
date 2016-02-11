@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/main', function(req, res, next) {
-  res.render('main', { title: 'Express' });
+  res.render('main', { title: 'venuRater' });
 });
 
 // router.get('/main/:id', function(req, res, next) {
@@ -41,18 +41,9 @@ router.get('/rate/:id', function(req, res, next) {
                              state: venue.venues[0].state,
                              zip: venue.venues[0].postal_code,
                              url: venue.venues[0].url,
-
         });
-        //res.render('show_movie', {title: movie.results[0].display_title});
-    });
+       });
 
-  // res.render('rate', { venueName: req.params.name, venueAddress: data.venues.address, venueCity: , venueState: , venueZipCode:  });
-//   res.render('rate');
-//   res.send(req.params.id);
-});
-
-router.get('/profile', function(req, res, next) {
-  res.render('profile', { title: 'Express' });
 });
 
 module.exports = router;

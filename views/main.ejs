@@ -6,23 +6,23 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
+  <a href="/logout" class="btn btn-default btn-sm" id="logout">Logout</a>
 
-<div class="searchby">
-<span id="searchby"<h2>Go ahead, search for a venue by its city.<br>Then let the rating begin!</h2></span>
+  <div class="searchby">
+    <span id="searchby">Go ahead, search for a venue by its city.<br>Then let the rating begin!</span>
 
-<form name="search" id="search"  style="margin-top: 55px;" method="" action="">
-    <div class="form-group" style='display: inline-block;'>
-      <input class="form-control" type="text" name="q" id="q" value="" style='display: block; margin: 5px; color: #1B9AAA' placeholder="Search for a venue by city"/>
-    </div>
-    <input class="btn2 btn-primary" id="search2" style="margin: 10px;" type="submit" name="submit" value="Search"/>
-  </form>
-</div>
+    <form name="search" id="search"  style="margin-top: 55px;" method="" action="">
+        <div class="form-group" style='display: inline-block;'>
+          <input class="form-control" type="text" name="q" id="q" value="" style='display: block; margin: 5px; color: #1B9AAA' placeholder="Search for a venue by city"/>
+        </div>
+        <input class="btn2 btn-primary" id="search2" style="margin: 10px;" type="submit" name="submit" value="Search"/>
+    </form>
+  </div>
 
-<ul id="results"></ul>
+  <ul id="results"></ul>
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript">
-
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript">
 
 $(function() {
     // Search SeatGeek API for all venues
@@ -50,19 +50,15 @@ $(function() {
         var venues = data;
 
         for (var i=0; i<data.venues.length; i++) {
-
           var content = '<a href="/rate/' + data.venues[i].id + ' "><li>' + data.venues[i].name + '</li></a>';
-              
-         console.log(content);
-         $('#results').append(content);
-
+          console.log(content);
+          $('#results').append(content);
         }
       })
       .fail(function(jqXHR, textStatus) {
         console.log("Request failed: " + textStatus);
       })
       .always(function() {
-        // console.log('Request completed');
       });
 
       function info(venues){
@@ -97,50 +93,6 @@ $(function() {
     
   });
 });
-
-
-
-// Show one venue's data
-// $(function() {
-
-//     var apiRoot = 'http://api.seatgeek.com/2/venues/';
-
-//     var loadVenues = function(){
-      
-//       var jqxhr = $.ajax({
-//         url: apiRoot + data.venues[i].id,
-//         method: "GET",
-//         data: {},
-//         dataType: "jsonp",
-//         jsonCallback: 'info'
-//       })
-//       .done(function(data) {
-//         var venues = data;
-
-//         for (var i=0; i<data.venues.length; i++) {
-
-//           var content = '<li>' + data.venues[i].name  + '</li>';
-              
-//          console.log(content);
-//          $('#faves').append(content);
-
-//         }
-//       })
-//       .fail(function(jqXHR, textStatus) {
-//         console.log("Request failed: " + textStatus);
-//       })
-//       .always(function() {
-//         // console.log('Request completed');
-//       });
-
-//       function info(venues){
-//         alert(venues);
-//       };
-//     }
-// });
-
-
-
 
 </script>
 </body>

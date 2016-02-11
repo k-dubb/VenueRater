@@ -1,25 +1,14 @@
-// load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
-// define the schema for our user model
 var userSchema = new mongoose.Schema({
   local: {
-      // name: { type: String, required: true },
-      // username: { type: String, required: true, unique: true },
       email: { type: String, required: true, unique: true },
       password: { type: String, required: true },
       created_at: Date,
       updated_at: Date
     },
-
-    facebook: {
-      id : String,
-      token : String,
-      name : String
-    }
 });
-
 
 // methods ======================
 // generating a hash
