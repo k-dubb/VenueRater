@@ -11,10 +11,7 @@ var rateSchema = new mongoose.Schema({
   
 });
 
-// Static method to "say hello"
-rateSchema.statics.sayHello = function() {
-  console.log("Hi, I'm " + this.name + ' and ' + this.favorite + ' is my favorite');
-};
+
 
 var Rate = mongoose.model('Rate', rateSchema);
 

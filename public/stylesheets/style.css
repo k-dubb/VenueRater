@@ -64,9 +64,16 @@ a{
     background-color: #6DB8BF;
     color: white;
 }
-#swing, #ball{
-    width: 26px;
-    height: 24px;
+
+
+#swing{
+    width: 30px;
+    height: 26px;
+    padding-right: 6px;
+}
+#ball{
+    width: 36 px;
+    height: 32px;
     padding-right: 6px;
 }
 #auth{
@@ -157,19 +164,140 @@ a{
 }
 .rating{
   margin-left: 525px;
+  margin-top: 50px;
 }
 h3{
     color: #1B9AAA !important;
     font-family: 'Bree Serif', serif;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
+    /*margin-top: 100px;   */
 }
 h2{
   text-align: center;
+  /*margin-top: 50px;*/
+  line-height: 1.5;
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 200px;
 }
-#favorites{
-  height: 20px;
-  width: 20px;
-  border: 1px black solid;
+#ask{
+  margin-right: 220px;
+}
+/*// Favorites box */
+div.background {
+  background: #6DB8BF repeat;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  text-decoration: underline;
+  font-size: 18px;
+  border-radius: 5%; 
+}
+
+div.transbox {
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  height: 180px;
+  border-radius: 5%;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+#btn2{
+  background-color: black;
+  color: white;
+  /*margin: 80px;*/
+  width: 125px;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px;
+  margin: 20px; 
+    
+}
+#btn2:hover{
+  background-color: #6DB8BF;
+  color: black;
+  font-weight: bold;
+}
+
+#btn3{
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px;
+/*margin: 180px;     */
+  margin-top: 50px;
+  margin-left: 500px;
+}
+#btn3:hover{
+  background-color: #6DB8BF;
+  color: black;
+  font-weight: bold;
+}
+#btn4{
+  background-color: black;
+  color: white;
+  /*margin: 80px;*/
+  width: 125px;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px;
+  margin: 20px;
+    
+}
+#btn4:hover{
+  background-color: #6DB8BF;
+  color: black;
+  font-weight: bold;
+}
+#boxed{
+  width: 400px;
+  -ms-transform: rotate(353deg); /* IE 9 */
+  -webkit-transform: rotate(353deg); /* Chrome, Safari, Opera */
+  transform: rotate(353deg);
+}
+#boxed2{
+  width: 400px;
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
+  float: right;
+  margin-top: -175px;
+  margin-right: 100px;
+}
+h4{
+  color: #1B9AAA !important;
+  font-family: 'Bree Serif', serif;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+#place{
+  height: 160px; 
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: -140px;
+  margin-left: 450px;
 }

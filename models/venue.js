@@ -13,10 +13,8 @@ var venueSchema = new mongoose.Schema({
     
 });
 
-// Static method to "say hello"
-// venueSchema.statics.sayHello = function() {
-//   console.log("Hi, I'm " + this.name + ' and ' + this.favorite + ' is my favorite');
-// };
+
+
 
 var Venue = mongoose.model('Venue', venueSchema);
 

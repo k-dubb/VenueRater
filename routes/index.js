@@ -20,7 +20,8 @@ router.get('/main', function(req, res, next) {
 // });
 
 router.get('/rate/:id', function(req, res, next) {
-  res.render('rate', { title: 'Express' });
+  // res.render('rate', { venueName: req.params.name, venueAddress: data.venues.address, venueCity: , venueState: , venueZipCode:  });
+  res.render('rate');
   res.send(req.params.id);
 });
 

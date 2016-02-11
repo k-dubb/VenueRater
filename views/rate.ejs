@@ -2,35 +2,41 @@
 <html>
 <head>
     <title>Project</title>
-
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://daigofuji.github.io/bbclub-font/css/bbclub-font.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-
 <body>
-    <h3>Rate  </h3>
-    
+
+  <a href="http://localhost:3000/main"><button type="button" class="btn btn-default" id="btn4">Go Back</button></a>
+
+    <div class="background">
+       <div class="transbox">
+         <p>My Favorite Venues:</p>
+          <ul id="faves"></ul>
+      </div>
+    </div>
+
+    <div id="ask">
+      <h2>Based on your experience with parking accessibility, <br>
+      food/drink options, cleanliness, and anything else you find relevent regarding your time, <br>
+      how would you rate your overall experience at "venue name"?<br>
+      Would you recommend it to others?</h2>
+    </div>
+
+
     <div class="rater">
-        <h2>How was your Overall Experience? Would you recommend it to others?</h2>
-        <fieldset class="rating" style="border: none">
-              <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="!Rocks">5 stars</label>
-              <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-              <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-              <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Not great">2 stars</label>
-              <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Never going back">1 star</label>
+      <fieldset class="rating" style="border: none">
+          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="!Rocks">5 stars</label>
+          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Not great">2 stars</label>
+          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Never going back">1 star</label>
       </fieldset>
     </div>
-    <script>
-        $('.rating input[type="radio"]').click(function(){
-        $('.rating input[type="radio"]').removeAttr('checked');
-        $(this).attr('checked', 'checked');
-        });
-    </script>
 
-    <!-- <div id="favorites"><h5>Favorites</h5></div> -->
-
-
+    <button type="button" class="btn btn-default" id="btn3">Add to Favorites</button>
 
 
 

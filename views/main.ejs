@@ -9,7 +9,7 @@
 
 <form name="search" id="search" method="" action="">
     <div class="form-group">
-      <input class="form-control" type="text" name="q" id="q" value="" placeholder="What venue are you interested in going to?"/>
+      <input class="form-control" type="text" name="q" id="q" value="" placeholder="Search for a venue by city"/>
     </div>
     <input class="btn2 btn-primary" id="search2" type="submit" name="submit" value="Search"/>
   </form>
@@ -19,96 +19,36 @@
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript">
 
-// $(function() {
-
-
-    // Search MongoLab DB
-  //   var venueAPI = './routes/api/v1/venues';
-
-  //   var loadVenues = function(stadiumName){
-      
-  //     var jqxhr = $.ajax({
-  //       url: venueAPI,
-  //       method: "GET",
-  //       data: {
-  //         stadiumName: stadiumName
-  //       },
-  //       dataType: "jsonp",
-  //       jsonCallback: 'info'
-  //     })
-  //     .done(function(data) {
-  //       var venues = data;
-
-  //       for (var i=0; i<data.venues.length; i++) {
-
-  //         var content = '<a href="/main/:id"><li>' + data.venues[i].stadiumName + ' -- ' + data.venues[i].address + ', ' + data.venues[i].team + '</li></a>';
-              
-  //        console.log(content);
-  //        $('#results').append(content);
-
-  //       }
-  //     })
-  //     .fail(function(jqXHR, textStatus) {
-  //       console.log("Request failed: " + textStatus);
-  //     })
-  //     .always(function() {
-  //       // console.log('Request completed');
-  //     });
-
-  //     function info(venues){
-  //       alert(venues);
-  //     };
-  //   }
-
-  //   var displayVenues = function(venues){
-  //     for (var i=0; i<data.venues.length; i++){
-  //       var venue = data.venues[i];
-
-  //       appendVenue();
-  //     }
-  //   };
-
-  //   var appendVenue = function(venue){
-  //     $('#venues').append(venue);
-
-  //       console.log(venue);
-  //   };
-
-  //   // Search 
-  //   $('#search').on('submit', function(evt) {
-  //     evt.preventDefault();
-  //     var searchTerm = $('#q').val();
-
-  //     loadVenues(searchTerm);
-
-  //     function info(venues){
-  //       alert(venues);
-  //     };
-    
-  // });
 
 $(function() {
 
-      // Search SeatGeek API
+    // Search SeatGeek API for all venues
     var apiRoot = 'http://api.seatgeek.com/2/venues/';
 
-    var loadVenues = function(name){
+    var loadVenues = function(city){
       
       var jqxhr = $.ajax({
         url: apiRoot,
         method: "GET",
         data: {
-          name: name
+          // name: name,
+          // address: address,
+          city: city
+          // state: state,
+          // postal_code: postal_code,
+          // id: id,
+          // url: url
         },
         dataType: "jsonp",
         jsonCallback: 'info'
       })
       .done(function(data) {
+        $('#results').empty();
         var venues = data;
 
         for (var i=0; i<data.venues.length; i++) {
 
-          var content = '<a href="/rate/' + data.venues[i].id + ' "><li>' + data.venues[i].id + ' -- ' + data.venues[i].address + ', ' + data.venues[i].city + ', ' + data.venues[i].state + ', ' + data.venues[i].postal_code +'</li></a>';
+          var content = '<a href="/rate/' + data.venues[i].id + ' "><li>' + data.venues[i].name + '</li></a>';
               
          console.log(content);
          $('#results').append(content);
@@ -125,7 +65,7 @@ $(function() {
       function info(venues){
         alert(venues);
       };
-    }
+    };
 
     var displayVenues = function(venues){
       for (var i=0; i<data.venues.length; i++){
@@ -153,46 +93,52 @@ $(function() {
       };
     
   });
-
-$('#results').on('click', function(){
-
-
-})
-
-
-
-  // var dbdata = mongoose.connect(process.env.DB_CONN_SPORTY);
-
-  // var loadmongodb = function(city){
-      
-  //     var jqxhr = $.ajax({
-  //       url: dbdata,
-  //       method: "GET",
-  //       data: {
-  //         city: city
-  //       },
-  //       dataType: "jsonp",
-  //       jsonCallback: 'info'
-  //     })
-  //     .done(function(data) {
-  //       var venues = data;
-
-  //       for (var i=0; i<data.venues.length; i++) {
-
-  //         var content = '<li>' + data.venues[i].name + ' -- ' + data.venues[i].address + ', ' + data.venues[i].city + ', ' + data.venues[i].state + ', ' + data.venues[i].postal_code +'</li>';
-              
-  //        $('#results').append(content);
-  //       }
-  //     })
-  //     .fail(function(jqXHR, textStatus) {
-  //       console.log("Request failed: " + textStatus);
-  //     })
-  //     .always(function() {
-  //       // console.log('Request completed');
-  //     });
-
-
 });
+
+
+
+// Show one venue's data
+// $(function() {
+
+//     var apiRoot = 'http://api.seatgeek.com/2/venues/';
+
+//     var loadVenues = function(){
+      
+//       var jqxhr = $.ajax({
+//         url: apiRoot + data.venues[i].id,
+//         method: "GET",
+//         data: {},
+//         dataType: "jsonp",
+//         jsonCallback: 'info'
+//       })
+//       .done(function(data) {
+//         var venues = data;
+
+//         for (var i=0; i<data.venues.length; i++) {
+
+//           var content = '<li>' + data.venues[i].name  + '</li>';
+              
+//          console.log(content);
+//          $('#faves').append(content);
+
+//         }
+//       })
+//       .fail(function(jqXHR, textStatus) {
+//         console.log("Request failed: " + textStatus);
+//       })
+//       .always(function() {
+//         // console.log('Request completed');
+//       });
+
+//       function info(venues){
+//         alert(venues);
+//       };
+//     }
+// });
+
+
+
+
 </script>
 </body>
 </html>
