@@ -1,4 +1,3 @@
-// load the things we need
 var mongoose = require('mongoose');
 // var bcrypt   = require('bcrypt-nodejs');
 
@@ -10,11 +9,7 @@ var venueSchema = new mongoose.Schema({
     address: { type: String },
     url: { type: String }
     // seatgeekId: { type: String },
-    
 });
-
-
-
 
 var Venue = mongoose.model('Venue', venueSchema);
 
