@@ -12,7 +12,7 @@ router.get('/main', function(req, res, next) {
 
 router.get('/rate/:id', function(req, res, next) {
     var id = req.params.id;
-    var uri = 'http://api.seatgeek.com/2/venues/';
+    var uri = 'https://api.seatgeek.com/2/venues/';
 
     request({
         method: 'GET',
