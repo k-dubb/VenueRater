@@ -165,11 +165,13 @@ div.transbox p {
   float: right;
   margin-right: 20px;
   margin-bottom: 20px;
+  outline-width: 0;
 }
 #btn3:hover{
   background-color: #6DB8BF;
   color: black;
   font-weight: bold;
+  outline-width: 0;
 }
 #btn4{
   background-color: black;
@@ -186,6 +188,7 @@ div.transbox p {
   background-color: #6DB8BF;
   color: black;
   font-weight: bold;
+  outline-width: 0;
 }
 #boxed{
   width: 400px;
