@@ -1,4 +1,8 @@
-Welcome to venueRater! A app where you can rate sporting and music venues (based on things like parking accessibility, food/drink options, cleanliness, overall experience, etc.) and save your favorites to access later. 
+Welcome to venueRater! 
+
+---
+
+An app where you can rate sporting and music venues (based on things like parking accessibility, food/drink options, cleanliness, overall experience, etc.) and save your favorites to access later. 
 ---
 
 ### Technologies used:
