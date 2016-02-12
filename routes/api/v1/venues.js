@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// var secrets = require('../../../secrets');
 var Venue = require('../../../models/venue');
 
 

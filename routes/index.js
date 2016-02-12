@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var secrets = require('../secrets');
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
