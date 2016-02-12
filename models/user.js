@@ -8,6 +8,7 @@ var userSchema = new mongoose.Schema({
       created_at: Date,
       updated_at: Date
     },
+    favorites: []
 });
 
 // methods ======================
@@ -23,6 +24,5 @@ userSchema.methods.validPassword = function(password) {
 
 var User = mongoose.model('User', userSchema);
 
-// create the model for users and expose it to our app
 // module.exports = mongoose.model('User', userSchema);
 module.exports = User;

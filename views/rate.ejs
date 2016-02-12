@@ -12,7 +12,7 @@
   <a href="http://localhost:3000/main"><button type="button" class="btn btn-default" id="btn4">Go Back</button></a>
   <h3>Rate <%= name %>:</h3>
 
-       <div class="venueData">
+      <div class="venueData">
         <ul class="vdata">
           <li id ="venue"><%= name %></li>
           <li id="venue"><%= address %></li>
@@ -24,7 +24,7 @@
 
     <div class="background">
        <div class="transbox">
-         <p>My Favorite Venues:</p>
+          <p>My Favorite Venues:</p>
           <ul id="faves"></ul>
       </div>
     </div>
@@ -49,7 +49,24 @@
     <img src='https://www.planted.com/assets/planted/logo-seatgeek@3x-092316c00f3540f8d1cf0cd1995cfc19b8461c082a7fffd30010d9b273f4877a.png' alt='seatgeek_logo' id='seatgeek_logo'>
     <a id="linkto" target='_blank' style='color: #1B9AAA' href=<%= url %>><%= url %></a>
     <button type="button" class="btn btn-default" id="btn3">Add to Favorites</button>
-
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+   
+    $(function() {
+        var addFavorite = function(name){
+          $('#faves').empty();
+          $('#faves').append(name);
+        };
+
+        $('#btn3').on('click', function(){
+          var name = '<li><%= name %></li>';
+
+          addFavorite(name);
+        });
+    });
+
+  </script>
+
 </body>
 </html>
