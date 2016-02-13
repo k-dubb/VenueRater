@@ -4,7 +4,7 @@ Welcome to venueRater! An app where you can rate sporting and music venues (base
 
 ### Technologies used:
 
-Node.js, JS, jQuery, AJAX, NoSQL- mongoose/MongoLab, incorporating the SeatGeek API, building my own API, Passport user auth, HTML, CSS, Semantic UI, Bootstrap, Heroku
+Node.js, Express, JS, jQuery, AJAX, NoSQL- mongoose/MongoLab, incorporating the SeatGeek API, building my own API, Passport user auth, HTML, CSS, Semantic UI, Bootstrap, Heroku
 
 ---
 
